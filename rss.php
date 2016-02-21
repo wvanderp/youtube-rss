@@ -34,6 +34,7 @@
 	rssMaker($episodes, $title);
 		
 function rssMaker($episodes, $title){
+	global $br;
 	echo '<?xml version="1.0" encoding="UTF-8"?>'.$br;
 	echo '<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">'.$br;
 		echo '<channel>'.$br;
@@ -44,6 +45,7 @@ function rssMaker($episodes, $title){
 			  
 			  echo '<generator>youtube-rss 0.1.0</generator>'.$br; //needs to be ajusted
 			  echo '<pubDate>'.date("r",time()).'</pubDate>'.$br; //needs to be ajusted
+
 				foreach($episodes as $epi){
 					echo '<item>'.$br;
 						echo '<title>'.$epi["title"].'</title>'.$br;
