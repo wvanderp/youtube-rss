@@ -1,0 +1,41 @@
+body {
+    padding-top: 60px;
+}
+
+#ytUrl {
+    width: 100%;
+}
+
+#ytClass {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.well-header{
+    color: #333;
+    background-color: #ffffff;
+    border-color: #ddd;
+
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    box-sizing: border-box;
+
+    margin-left:-19px;
+    margin-right:-19px;
+    margin-top: -19px;
+    margin-bottom: 19px;
+
+    font-size: 14px;
+}
+
+#urlBtn{
+    background-color: #181f25;
+
+}
+
+#urlBtn a{
+    color: #ddd;
+}

@@ -45,6 +45,7 @@ function rssMaker($episodes, $title){
 			  
 			  echo '<generator>youtube-rss 0.1.0</generator>'.$br; //needs to be ajusted
 			  echo '<pubDate>'.date("r",time()).'</pubDate>'.$br; //needs to be ajusted
+
 				foreach($episodes as $epi){
 					echo '<item>'.$br;
 						echo '<title>'.$epi["title"].'</title>'.$br;
