@@ -1,16 +1,14 @@
 <?php
-	include("urlAsambler.php");
+	include("setting.php");
+
 	$type = str_replace("yt:", "", $_GET["type"]);
 	$id = $_GET["id"];
 
 	if(file_exists("/var/www/html/youtube-rss/cash/".$id.".mp3")){
-		header("location: http://cwms.cc/youtube-rss/cash/".$id.".mp3");
-		//die("hallo");
+		header("location: http://".$domain."/".$path."/cash/".$id.".mp3");
 	}else{
-
-		//echo 'youtube-dl -x --audio-format mp3 -o "/var/www/html/youtube-rss/cash/%(id)s.%(ext)s" '.$id;
-
-		$output = exec('youtube-dl -x --audio-format mp3 -o "/var/www/html/youtube-rss/cash/%(id)s.%(ext)s" '.$id, $ret);
-		header("location: http://cwms.cc/youtube-rss/cash/".$id.".mp3");
+		$youtube_dl_command = $youtube_dl_bin.' -x --audio-format mp3 -o '.$root_dir."/".$cash_location.' '.$id;
+		$output = exec($youtube_dl_command, $ret);
+		header("location: http://".$domain."/".$path."/cash/".$id.".mp3");
 	}
-?>
+
