@@ -5,4 +5,4 @@
     $domain = "cwms.cc";
     $path = "/youtube-rss/";
     $root_dir = "/var/www/html/youtube-rss";
-    $cash_location = "/cash/%(id)s.%(ext)s";
+    $cash_location = "/cash/";

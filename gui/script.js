@@ -68,7 +68,7 @@ function ytClassification(url) {
 }
 
  function makeUrl(){
-     feedUrl = "http://cwms.cc/youtube-rss/rss.php?type=yt:"+yt.type+"&id="+yt.id;
+     feedUrl = "http://"+domain+".cc/youtube-rss/rss.php?type=yt:"+yt.type+"&id="+yt.id;
  }
 
  function updateUrl(){
