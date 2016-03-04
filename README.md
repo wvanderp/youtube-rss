@@ -9,12 +9,14 @@ The songs are downloaded on the fly and converted to mp3. And then stored on the
 * youtube-dl
 * ffmpeg or libav
 
-#roadmap
-0.92.0 - 
-Settings file
+# how to install
+* install php
+* install youtube-dl
+* install ffmpeg
+* git clone the repo
+* go to `http://yourDomain/youtube-rss/test_env.php` in your browser
 
-0.93.0 - 
-Code cleaning for main release
+#roadmap
 
 1.0.0 - 
 Main release

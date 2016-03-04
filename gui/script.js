@@ -8,8 +8,6 @@ $(document).ready(function(){
 
 });
 
-console.log(ytClassification("https://www.youtube.com/user/StukTV"));
-
 function updateClassification(){
     $("#ytClass").addClass("hidden");
 
@@ -23,11 +21,13 @@ function updateClassification(){
     if(yt == false){
         $("#ytClass").removeClass("hidden");
         $("#ytClass div").text("not a youtube url");
+        return;
     }
 
     if(yt.type == "video"){
         $("#ytClass").removeClass("hidden");
-        $("#ytClass div").html("you cant make a rss feed from a single video<br>use a channel of playlist");
+        $("#ytClass div").html("you can't make a rss feed from a single video<br>use a channel of playlist");
+        return
     }
 
     updateUrl();
@@ -38,8 +38,7 @@ function ytClassification(url) {
     
     var ytTest;
     ytTest = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\//;
-    
-    //console.log(ytTest.exec(url));
+
     if(ytTest.exec(url) == null){
         console.log( "this is not a yt url");
         return false;
@@ -56,7 +55,6 @@ function ytClassification(url) {
     type = type.replace(/(watch)/g, "video");
     type = type.toLowerCase();
 
-//     var idRegex = /(\/|=)[a-zA-Z0-9_]*/;
     var idRegex = /[\/|=]{1}[A-Za-z0-9\-]+$/;
 
     var idRes = idRegex.exec(url);
