@@ -1,7 +1,3 @@
-<?
-    require "setting.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +15,7 @@
     <link href="gui/style.css" rel="stylesheet">
     <script src="gui/script.js"></script>
 
-    <script> var domain = "<?php echo $domain?>";</script>
+    <script> window.domain = "<?php require "setting.php"; echo $domain?>";</script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
