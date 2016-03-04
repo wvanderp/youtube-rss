@@ -1,6 +1,6 @@
 <?php
     require "setting.php";
-    $neededPhpVersion = 50614;
+    $neededPhpVersion = 50509;
 
     define("br", "<br>");
     //things to test:
@@ -14,7 +14,7 @@
     }
 
     if (PHP_VERSION_ID < $neededPhpVersion) {
-        die("php is out of date");
+        die("php is out of date<br>php version is: ".PHP_VERSION_ID);
     } else {
         echo "php version: " . PHP_VERSION_ID . " is ok" . br;
     }
@@ -55,7 +55,7 @@
     // * youtube-dl
     // is youtube-dl working
     if (exec($youtube_dl_bin . " --version") == "") {
-        die("youtube-dl: isn’t working");
+        die("youtube-dl: isn't working");
     } else {
         echo "youtube-dl: is working fine" . br;
     }
@@ -71,4 +71,6 @@
         echo "youtube-dl up to date: true";
     }
 
+
+   echo "<h1>everything is awesome</h1>";
 

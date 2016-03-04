@@ -54,8 +54,8 @@ function rssMaker($episodes, $title)
                 //echo '<comments>http://twit.tv/sn/528</comments>'.$br; //needs to be ajusted
                 echo '<description>' . $epi["description"] . '</description>' . $br; //needs to be ajusted
 
-                echo '<link>http://cwms.cc/youtube-rss/download.php?type=yt:video&amp;id=' . $epi["id"] . '</link>' . $br; //needs to be ajusted
-                echo '<enclosure url="http://cwms.cc/youtube-rss/download.php?type=yt:video&amp;id=' . $epi["id"] . '" type="audio/mpeg"/>' . $br; //needs to be ajusted
+                echo '<link>http://'.$domain.'/youtube-rss/download.php?type=yt:video&amp;id=' . $epi["id"] . '</link>' . $br; //needs to be ajusted
+                echo '<enclosure url="http://'.$domain.'/youtube-rss/download.php?type=yt:video&amp;id=' . $epi["id"] . '" type="audio/mpeg"/>' . $br; //needs to be ajusted
             echo '</item>' . $br;
         }
         echo '</channel>' . $br;
