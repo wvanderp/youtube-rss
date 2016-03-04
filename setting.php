@@ -1,5 +1,5 @@
 <?php
-    $version = "0.94.0";
+    $version = "1.0.0";
     $youtube_dl_bin = "youtube-dl";
 
     $domain = "cwms.cc";
