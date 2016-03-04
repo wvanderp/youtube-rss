@@ -1,7 +1,7 @@
 <?php
 ini_set('max_execution_time', 0);
 header('Content-Type: text/xml; charset=utf-8');
-require 'setting.php';
+require ("setting.php");
 include("urlAsambler.php");
 $br = "\n";
 
@@ -33,9 +33,8 @@ foreach ($data["entries"] as $json) {
 
 rssMaker($episodes, $title);
 
-function rssMaker($episodes, $title)
-{
-    global $br, $version;
+function rssMaker($episodes, $title) {
+    global $br, $version, $domain;
     echo '<?xml version="1.0" encoding="UTF-8"?>' . $br;
     echo '<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">' . $br;
         echo '<channel>' . $br;
