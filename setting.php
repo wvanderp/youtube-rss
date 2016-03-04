@@ -3,6 +3,6 @@
     $youtube_dl_bin = "youtube-dl";
 
     $domain = "cwms.cc";
-    $path = "/youtube-rss/";
+    $path = "youtube-rss/";
     $root_dir = "/var/www/html/youtube-rss";
     $cash_location = "/cash/";

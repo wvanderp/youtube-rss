@@ -34,7 +34,7 @@ foreach ($data["entries"] as $json) {
 rssMaker($episodes, $title);
 
 function rssMaker($episodes, $title) {
-    global $br, $version, $domain;
+    global $br, $version, $domain, $path;
     echo '<?xml version="1.0" encoding="UTF-8"?>' . $br;
     echo '<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">' . $br;
         echo '<channel>' . $br;
@@ -53,8 +53,8 @@ function rssMaker($episodes, $title) {
                 //echo '<comments>http://twit.tv/sn/528</comments>'.$br; //needs to be ajusted
                 echo '<description>' . $epi["description"] . '</description>' . $br; //needs to be ajusted
 
-                echo '<link>http://'.$domain.'/youtube-rss/download.php?type=yt:video&amp;id=' . $epi["id"] . '</link>' . $br; //needs to be ajusted
-                echo '<enclosure url="http://'.$domain.'/youtube-rss/download.php?type=yt:video&amp;id=' . $epi["id"] . '" type="audio/mpeg"/>' . $br; //needs to be ajusted
+                echo '<link>http://'.$domain.'/'.$path.'/download.php?type=yt:video&amp;id=' . $epi["id"] . '</link>' . $br; //needs to be ajusted
+                echo '<enclosure url="http://'.$domain.'/'.$path.'/download.php?type=yt:video&amp;id=' . $epi["id"] . '" type="audio/mpeg"/>' . $br; //needs to be ajusted
             echo '</item>' . $br;
         }
         echo '</channel>' . $br;
