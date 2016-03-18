@@ -10,9 +10,9 @@ $id = $_GET["id"];
 
 $url = ytUrlMaker($type, $id);
 
-$minMax = "--playlist-start 1 --playlist-end 20";
+$minMax = "--playlist-start 1 --playlist-end ".$episodePerRss;
 
-$output = shell_exec('youtube-dl -J -i ' . $minMax . ' ' . $url);
+$output = shell_exec($youtube_dl_bin.' -J -i ' . $minMax . ' ' . $url);
 $data = json_decode($output, true);
 $episodes = array();
 
@@ -55,6 +55,11 @@ function rssMaker($episodes, $title) {
 
                 echo '<link>http://'.$domain.'/'.$path.'/download.php?type=yt:video&amp;id=' . $epi["id"] . '</link>' . $br; //needs to be ajusted
                 echo '<enclosure url="http://'.$domain.'/'.$path.'/download.php?type=yt:video&amp;id=' . $epi["id"] . '" type="audio/mpeg"/>' . $br; //needs to be ajusted
+
+                echo '<media:thumbnail url="http://'.$domain.'/'.$path.'/thumbnail.php?type=yt:video&amp;id=' . $epi["id"] . '"/>'. $br;
+                echo '<image>'.$br;
+                    echo '<url>http://'.$domain.'/'.$path.'/thumbnail.php?type=yt:video&amp;id=' . $epi["id"] . '</url>'.$br;
+                echo '</image>'.$br;
             echo '</item>' . $br;
         }
         echo '</channel>' . $br;
