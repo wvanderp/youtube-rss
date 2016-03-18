@@ -36,6 +36,16 @@
         echo "file exists \"" . $dir . "\": true" . br;
     }
 
+    $dir = "cash/thumb/";
+    if (!file_exists($dir)) {
+        echo "file exists \"" . $dir . "\": false" . br;
+        echo "file exists \"" . $dir . "\": making directory" . br;
+        mkdir($dir);
+        echo "file exists \"" . $dir . "\": success" . br;
+    } else {
+        echo "file exists \"" . $dir . "\": true" . br;
+    }
+
     // * folder permissions
     $dir = "./";
     if (!is_writable($dir)) {
@@ -46,6 +56,14 @@
 
     // current dir: ./cash
     $dir = "cash/";
+    if (!is_writable($dir)) {
+        die("file permission \"" . $dir . "\": not granted");
+    } else {
+        echo "file permission \"" . $dir . "\": ok" . br;
+    }
+
+    // current dir: ./cash
+    $dir = "cash/thumb/";
     if (!is_writable($dir)) {
         die("file permission \"" . $dir . "\": not granted");
     } else {
