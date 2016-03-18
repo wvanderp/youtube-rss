@@ -10,7 +10,7 @@
 	if(file_exists($root_dir."/".$cash_location."/".$id.".mp3")){
 		header("location: http://".$domain."/".$path."/".$cash_location."/".$id.".mp3");
 	}else{
-		$youtube_dl_command = $youtube_dl_bin.' -x --audio-format mp3 -o "'.$root_dir."/".$cash_location.'/%(id)s.%(ext)s" "'.$url.'"';
+		$youtube_dl_command = $youtube_dl_bin.' -x --audio-format mp3 --embed-thumbnail -o "'.$root_dir."/".$cash_location.'/%(id)s.%(ext)s" "'.$url.'"';
 		$output = exec($youtube_dl_command, $ret);
 		header("location: http://".$domain."/".$path."/".$cash_location."/".$id.".mp3");
 	}
