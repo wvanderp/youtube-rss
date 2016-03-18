@@ -57,6 +57,7 @@ function rssMaker($episodes, $title) {
                 echo '<enclosure url="http://'.$domain.'/'.$path.'/download.php?type=yt:video&amp;id=' . $epi["id"] . '" type="audio/mpeg"/>' . $br; //needs to be ajusted
 
                 echo '<media:thumbnail url="http://'.$domain.'/'.$path.'/thumbnail.php?type=yt:video&amp;id=' . $epi["id"] . '"/>'. $br;
+                echo '<itunes:image href="http://'.$domain.'/'.$path.'/thumbnail.php?type=yt:video&amp;id=' . $epi["id"] . '"/>';
                 echo '<image>'.$br;
                     echo '<url>http://'.$domain.'/'.$path.'/thumbnail.php?type=yt:video&amp;id=' . $epi["id"] . '</url>'.$br;
                 echo '</image>'.$br;
