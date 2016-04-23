@@ -37,6 +37,7 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="gui/about.html">About</a></li>
                 <li><a href="cash/">Cash</a></li>
+                <li><a href="test_env.php">test env</a></li>
             </ul>
         </div>
 

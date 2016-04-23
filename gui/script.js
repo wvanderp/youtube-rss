@@ -55,7 +55,7 @@ function ytClassification(url) {
     type = type.replace(/(watch)/g, "video");
     type = type.toLowerCase();
 
-    var idRegex = /[\/|=]{1}[A-Za-z0-9\-]+$/;
+    var idRegex = /[\/|=]{1}[A-Za-z0-9\-_]+$/;
 
     var idRes = idRegex.exec(url);
     var id = idRes[idRes.length -1];

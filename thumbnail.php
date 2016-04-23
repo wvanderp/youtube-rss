@@ -12,7 +12,7 @@ if(file_exists($root_dir."/".$cash_location."/thumb/".$id.".jpg")){
 }else{
     $youtube_dl_command = $youtube_dl_bin.' --skip-download --write-thumbnail -o "'.$root_dir.'"/cash/thumb/%(id)s.%(ext)s "'.$url.'"';
     $output = exec($youtube_dl_command, $ret);
-    var_dump($ret);
+    //var_dump($ret);
     header("location: http://".$domain."/".$path."/".$cash_location."/thumb/".$id.".jpg");
 }
 
