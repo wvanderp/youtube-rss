@@ -1,8 +1,17 @@
 <?php
-    require "setting.php";
-    $neededPhpVersion = 50509;
-
     define("br", "<br>");
+
+    // does the settings file exist
+
+    if(!file_exists("settings.php")) {
+        echo "file exists \"settings.php\": false" . br;
+        die("make changes to the settings.exp.php file and rename it to settings.php");
+    }else{
+        echo "file exists \"settings.php\": true" . br;
+    }
+
+    require "settings.php";
+    $neededPhpVersion = 50509;
     //things to test:
     // * php install
 

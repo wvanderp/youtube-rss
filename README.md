@@ -14,6 +14,7 @@ The songs are downloaded on the fly and converted to mp3. And then stored on the
 * install youtube-dl
 * install ffmpeg
 * git clone the repo
+* change the contenst of `settings.exp.php` and rename it to `settings.php`
 * go to `http://yourDomain/youtube-rss/test_env.php` in your browser
 
 #roadmap

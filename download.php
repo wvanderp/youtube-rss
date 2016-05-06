@@ -1,5 +1,5 @@
 <?php
-	include("setting.php");
+	include("settings.php");
 	//get type from url.
 	//replacing "yt:" with nothing because we don’t support other sites
 	$type = str_replace("yt:", "", $_GET["type"]);

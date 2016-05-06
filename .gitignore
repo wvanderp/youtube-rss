@@ -178,5 +178,5 @@ cash/
 bin/
 
 #setting are personal and should not be uploaded
-setting.php
+settings.php
 */setting.php
