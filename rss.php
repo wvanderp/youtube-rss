@@ -1,6 +1,6 @@
 <?php
 ini_set('max_execution_time', 0);
-//header('Content-Type: text/xml; charset=utf-8');
+header('Content-Type: text/xml; charset=utf-8');
 
 require("settings.php");
 include("urlAsambler.php");
@@ -13,15 +13,13 @@ $url = ytUrlMaker($type, $id);
 
 $minMax = "--playlist-start 1 --playlist-end ".$episodePerRss;
 
-exec($youtube_dl_bin.' -J -i ' . $minMax . ' \''.$url.'\'',$output);
-
-//echo $youtube_dl_bin.' -J -i ' . $minMax . ' \''.$url.'\'';
-var_dump($output);
+$output = shell_exec($youtube_dl_bin.' -J -i ' . $minMax . ' \''.$url.'\'');
 
 $data = json_decode($output, true);
 $episodes = array();
 
-$title = htmlspecialchars($data["title"]);
+$title = str_replace("Uploads from ", "", $data["title"]);
+$title = htmlspecialchars($title);
 
 foreach ($data["entries"] as $json) {
     $episode = array();
@@ -40,8 +38,9 @@ rssMaker($episodes, $title);
 
 function rssMaker($episodes, $title) {
     global $br, $version, $domain, $path;
+	
     echo '<?xml version="1.0" encoding="UTF-8"?>' . $br;
-    echo '<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">' . $br;
+    echo '<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">' . $br;
         echo '<channel>' . $br;
         echo '<title>' . $title . '</title>' . $br; //needs to be ajusted
         //echo '<description>random rss youtube podcast</description>'.$br; //needs to be ajusted
