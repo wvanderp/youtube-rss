@@ -1,6 +1,7 @@
 <?php
 ini_set('max_execution_time', 0);
 header('Content-Type: text/xml; charset=utf-8');
+
 require ("setting.php");
 include("urlAsambler.php");
 $br = "\n";
@@ -12,7 +13,8 @@ $url = ytUrlMaker($type, $id);
 
 $minMax = "--playlist-start 1 --playlist-end ".$episodePerRss;
 
-$output = shell_exec($youtube_dl_bin.' -J -i ' . $minMax . ' ' . $url);
+$output = shell_exec($youtube_dl_bin.' -J -i ' . $minMax . ' \''.$url.'\'');
+
 $data = json_decode($output, true);
 $episodes = array();
 
