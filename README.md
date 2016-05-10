@@ -6,6 +6,7 @@ The songs are downloaded on the fly and converted to mp3. And then stored on the
 
 # features
 * downloads youtube channels and playlists
+* converts video's to mp3
 * on the fly downloading
 * Thumbnails
 
