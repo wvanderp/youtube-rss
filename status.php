@@ -1,7 +1,7 @@
 <?php
 
 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-    echo '<h1>This feature is linux only!</h1>';
+    echo '<h1>This feature is Linux only!</h1>';
     die();
 }
 

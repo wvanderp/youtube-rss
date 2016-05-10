@@ -1,8 +1,13 @@
 #YouTube-rss
 YouTube-rss is a php script based on [YouTube-dl](https://rg3.github.io/youtube-dl/) that generates an rss feed based on YouTube channels or users.
-It uses the mutch loved [YouTube-dl](https://rg3.github.io/youtube-dl/) for downloading and feed generation.
+It uses the much loved [YouTube-dl](https://rg3.github.io/youtube-dl/) for downloading and feed generation.
 
 The songs are downloaded on the fly and converted to mp3. And then stored on the server for later use.
+
+# features
+* downloads youtube channels and playlists
+* on the fly downloading
+* Thumbnails
 
 #requirements
 * [php](php.net)
@@ -18,15 +23,6 @@ The songs are downloaded on the fly and converted to mp3. And then stored on the
 * go to `http://yourDomain/youtube-rss/test_env.php` in your browser
 
 #roadmap
-
-1.0.0 - 
-Main release
-
-1.1.0 - 
-Thumbnail
-
-1.2.0 - 
-Rss playlist size
 
 1.3.0 - 
 video podcast

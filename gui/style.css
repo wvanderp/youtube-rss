@@ -23,10 +23,7 @@ body {
 
     box-sizing: border-box;
 
-    margin-left:-19px;
-    margin-right:-19px;
-    margin-top: -19px;
-    margin-bottom: 19px;
+    margin: -19px -19px 19px;
 
     font-size: 14px;
 }
