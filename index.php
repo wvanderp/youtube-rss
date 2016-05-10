@@ -38,6 +38,7 @@
                 <li><a href="gui/about.html">About</a></li>
                 <li><a href="cash/">Cash</a></li>
                 <li><a href="test_env.php">test env</a></li>
+                <li><a href="status.php">status</a></li>
             </ul>
         </div>
 
