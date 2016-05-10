@@ -11,7 +11,7 @@ The songs are downloaded on the fly and converted to mp3. And then stored on the
 * Thumbnails
 
 #requirements
-* [php](php.net)
+* [php](http://php.net)
 * [YouTube-dl](https://rg3.github.io/youtube-dl/)
 * [ffmpeg](https://www.ffmpeg.org/) or [libav](https://libav.org/)
 
