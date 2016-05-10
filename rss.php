@@ -13,7 +13,11 @@ $url = ytUrlMaker($type, $id);
 
 $minMax = "--playlist-start 1 --playlist-end ".$episodePerRss;
 
-$output = shell_exec($youtube_dl_bin.' -J -i ' . $minMax . ' \''.$url.'\'');
+$bin = $youtube_dl_bin.' -J -i ' . $minMax . ' \''.$url.'\'';
+
+//$bin .= ' 2>&1';
+
+$output = shell_exec($bin);
 
 $data = json_decode($output, true);
 $episodes = array();
