@@ -10,7 +10,7 @@ require "settings.php";
 
 echo "<h2>hard disk drive space</h2>";
 
-$bin = "df";
+$bin = "df -h";
 $output = shell_exec($bin);
 echo nl2br($output);
 echo br;
