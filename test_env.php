@@ -34,6 +34,17 @@
         echo "exec enabled: true" . br;
     }
 
+    // * haz ffmpeg
+    $ffmpeg = trim(exec('type -P ffmpeg'));
+
+    if (empty($ffmpeg)){
+        echo "ffmpeg: not installed";
+        die('ffmpeg: install with "sudo apt-get install ffmpeg"');
+    }else{
+        echo "ffmpeg: working" . br;;        
+    }
+
+
     // * folder existing
     $dir = "cash/";
     if (!file_exists($dir)) {
