@@ -37,8 +37,8 @@
     // * haz ffmpeg
     $ffmpeg = trim(exec('type -P ffmpeg'));
 
-    if (empty($ffmpeg)){
-        echo "ffmpeg: not installed";
+    if (empty($ffmpeg) || $ffmpeg == "ffmpeg: not found")){
+        echo "ffmpeg: not installed". br;
         die('ffmpeg: install with "sudo apt-get install ffmpeg"');
     }else{
         echo "ffmpeg: working" . br;;        
