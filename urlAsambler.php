@@ -1,4 +1,14 @@
 <?php
+
+
+    /**
+     * @param $type
+     *      indicator of the site used
+     * @param $id
+     *      id of the item for witch a url is generated
+     * @return string
+     *      the url of the item according to the type and id
+     */
     function ytUrlMaker($type, $id) {
         switch ($type) {
             case "channel":

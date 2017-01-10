@@ -15,13 +15,14 @@
 
     $bin = $youtube_dl_bin . ' -J -i ' . $minMax . ' \'' . $url . '\'';
 
-//$bin .= ' 2>&1';
+    //$bin .= ' 2>&1';
 
     $output = shell_exec($bin);
 
     $data = json_decode($output, true);
     $episodes = array();
 
+    //yt specific
     $title = str_replace("Uploads from ", "", $data["title"]);
     $title = htmlspecialchars($title);
 
@@ -40,6 +41,14 @@
 
     rssMaker($episodes, $title);
 
+    /**
+     * after getting a episode list from back in the code this function writes the rss
+     *
+     * @param $episodes
+     *      an array with episodes with an array with the data of the episode
+     * @param $title
+     *      the title of the rss feed according to code above
+     */
     function rssMaker($episodes, $title) {
         global $br, $version, $domain, $path;
 
