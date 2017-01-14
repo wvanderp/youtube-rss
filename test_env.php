@@ -3,10 +3,10 @@
 
     // does the settings file exist
 
-    if(!file_exists("settings.php")) {
+    if (!file_exists("settings.php")) {
         echo "file exists \"settings.php\": false" . br;
         die("make changes to the settings.exp.php file and rename it to settings.php");
-    }else{
+    } else {
         echo "file exists \"settings.php\": true" . br;
     }
 
@@ -23,7 +23,7 @@
     }
 
     if (PHP_VERSION_ID < $neededPhpVersion) {
-        die("php is out of date<br>php version is: ".PHP_VERSION_ID);
+        die("php is out of date<br>php version is: " . PHP_VERSION_ID);
     } else {
         echo "php version: " . PHP_VERSION_ID . " is ok" . br;
     }
@@ -40,8 +40,8 @@
     if (empty($ffmpeg) || $ffmpeg == "ffmpeg: not found"){
         echo "ffmpeg: not installed". br;
         die('ffmpeg: install with "sudo apt-get install ffmpeg"');
-    }else{
-        echo "ffmpeg: working" . br;;        
+    } else {
+        echo "ffmpeg: working" . br;;
     }
 
 
@@ -110,5 +110,5 @@
     }
 
 
-   echo "<h1>everything is awesome</h1>";
+    echo "<h1>everything is awesome</h1>";
 
