@@ -34,11 +34,11 @@
 
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li><a href="gui/about.html">About</a></li>
                 <li><a href="cash/">Cash</a></li>
                 <li><a href="commands.php">commands</a></li>
-                <li><a href="status.php">status</a></li>
+                <li class="active"><a href="status.php">status</a></li>
             </ul>
         </div>
 
