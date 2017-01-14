@@ -1,3 +1,24 @@
+<?php
+    require "settings.php";
+    if(isset($_GET["command"])){
+        if($_GET["command"] == "clearCash"){
+            $bin = "rm -rf -- " . $root_dir . $cash_location . "/*";
+            $output = shell_exec($bin);
+
+            header("location: commands.php?message=cleared Cash \n".$output);
+        }
+
+        if($_GET["command"] == "updateYTDL"){
+            $bin = $youtube_dl_bin . " -U";
+            $output = shell_exec($bin);
+
+            header("location: commands.php?message=updated youtube-dl \n".$output);
+        }
+
+        die();
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +34,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <link href="gui/style.css" rel="stylesheet">
-    <script src="gui/script.js"></script>
 
-    <script> window.domain = "<?php require "settings.php"; echo $domain?>";</script>
+
+    <script> window.domain = "<?php echo $domain?>";</script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -44,31 +65,22 @@
 
     </div>
 </nav>
+<?php     if(isset($_GET["message"])) {
+    echo '
+    <div class="container">
+        <div class="row well">
+            '.nl2br($_GET["message"]).'
+        </div>
+    </div>';
+}
+?>
 
 <div class="container">
     <div class="row well">
-        <div class="form-inline">
-            <input type="text" class="form-control" id="ytUrl" placeholder="youtube url">
-        </div>
-        <div class="panel panel-default hidden" id="ytClass">
-            <div class="panel-body">
+        <a class="btn btn-success btn-lg" href="commands.php?command=clearCash" role="button">clear cash</a>
+        <a class="btn btn-success btn-lg" href="commands.php?command=updateYTDL" role="button">update youtube-dl</a>
 
-            </div>
-        </div>
-    </div>
-    <div class="row well">
-        <div class="well-header">options</div>
-        no options at the moment
-    </div>
-    <div class="row well">
-        <div class="form-inline input-group">
-            <div class="input-group-addon" id="urlBtn">
-                <a id="feedLink" href="#">
-                    click here
-                </a>
-            </div>
-            <input type="text" class="form-control" id="feedUrl" placeholder="youtube url">
-        </div>
+
     </div>
 </div>
 
