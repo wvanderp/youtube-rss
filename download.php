@@ -9,7 +9,7 @@
     if (file_exists($root_dir . "/" . $cash_location . "/" . $id . ".mp3")) {
         header("location: http://" . $domain . "/" . $path . "/" . $cash_location . "/" . $id . ".mp3");
     } else {
-        $url = "https://www.youtube.com/watch?v=" . $id;
+        $url = "http://www.youtube.com/watch?v=" . $id;
         $youtube_dl_command = $youtube_dl_bin .
             ' --extract-audio' .
             ' --audio-format mp3' .
