@@ -2,8 +2,12 @@
     ini_set('max_execution_time', 0);
     header('Content-Type: text/xml; charset=utf-8');
 
+    //adding running cron to this page
+    require("cron.php");
+    cron();
+
     require("settings.php");
-    include("urlAsambler.php");
+    require("urlAsambler.php");
     $br = "\n";
 
     $type = str_replace("yt:", "", $_GET["type"]);

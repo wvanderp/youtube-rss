@@ -1,5 +1,10 @@
 <?php
-    include("settings.php");
+    require("settings.php");
+
+    //adding running cron to this page
+    require("cron.php");
+    cron();
+
     //get type from url.
     //replacing "yt:" with nothing because we don’t support other sites
     $type = str_replace("yt:", "", $_GET["type"]);
