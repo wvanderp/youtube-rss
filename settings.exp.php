@@ -11,4 +11,4 @@
 
     //time in seconds
     $cronTime = 300;
-    $cronTimeFile = $root_dir . $cash_location . "cronFile.txt";
+    $cronTimeFile = $root_dir . "cronFile.txt";

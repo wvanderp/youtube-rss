@@ -180,3 +180,6 @@ bin/
 #setting are personal and should not be uploaded
 settings.php
 */setting.php
+
+#the cron time keeping file also shouldnt be uploaded
+cronFile.txt
